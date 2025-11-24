@@ -9,7 +9,8 @@ dotenv.config()
 const SERVER_PORT = process.env.SERVER_PORT
 const MONGO_URI = process.env.MONGO_URI as string
 
-const app = express()
+const app = express() 
+
 
 app.use(express.json())
 app.use(
@@ -21,6 +22,10 @@ app.use(
 
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/post", postRouter)
+
+app.get("/",(req,res) =>{
+  res.send("API")
+})
 
 mongoose
   .connect(MONGO_URI)
