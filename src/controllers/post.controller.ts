@@ -72,7 +72,7 @@ export const getAllPost = async (req: Request, res: Response) => {
     })
   } catch (err) {
     console.error(err)
-    res.status(500).json({ message: "Fail to fetch post" })
+    res.status(500).json({ message: "Fail to fetch post", err })
   }
 }
 
